@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.17.3",
+    "path": "^0.12.7",
     "gun": "^0.2020.1236",
     "http": "^0.0.1-security",
     "zenbase": "git://github.com/parajbs/Zenbase.git"
