@@ -21,9 +21,9 @@ var skyRadata = "radata";
 const app = express();
 app.use(zenbase.serve);
 
-const server = app.listen(port, host);
+const gunRelaySkynetServer = app.listen(port, host);
 
-console.log(`server listening on http://${host}:${port}`);
+console.log(`gunRelaySkynetServer listening on http://${host}:${port}`);
 
 function logIn(msg){
   console.log(`in msg:${JSON.stringify(msg)}.........`);
@@ -34,7 +34,7 @@ function logOut(msg){
 }
 
 var gunOpts = {
-  web: server,
+  web: gunRelaySkynetServer,
   localStorage: false,
   secret: skySecret, 
   portal: skyPortal, 
@@ -56,8 +56,10 @@ if (process.env.PEERS) {
 
 var gun = zenbase(gunOpts);
 
-gun._.on('in', logIn);
-gun._.on('out', logOut);
+//gun._.on('in', logIn);
+//gun._.on('get', (data)=>{console.log('GUN-GET: '+data.get['#'])}) //log anything that is coming in
+//gun._.on('out', logOut);
+//gun._.on('put', (data)=>{console.log('GUN-PUT: '+JSON.stringify(data.put))}) //log anything that is coming in
 
 function logPeers() {
   console.log(`Peers: ${Object.keys(gun._.opt.peers).join(', ')}`);
