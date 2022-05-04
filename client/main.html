@@ -1,0 +1,23 @@
+<html>
+  <head> </head>
+  <body>
+    <script src="./js/gun.js"></script>
+
+    <script>
+      let hello_world = "";
+      let gunDBkey = "hello1";
+      const gun = new Gun({
+        peers: ["http://localhost/gun"],
+        localStorage: false,
+        radisk: false,
+      });
+
+      gun.get(gunDBkey).put({ name: "world1" });
+
+      sleepTime = 3200; // better sleeptime = 1500
+      setTimeout(function () {
+        // gun.get(gunDBkey).on(data => { hello_world = data.name; console.log(gunDBkey+": " + JSON.stringify(hello_world)); })
+      }, sleepTime);
+    </script>
+  </body>
+</html>
