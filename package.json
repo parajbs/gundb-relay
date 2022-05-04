@@ -2,7 +2,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "file-api": "^0.10.4",
-    "gun": "^0.2020.1237",
+    "gun": "^0.2020.1235",
     "http": "^0.0.1-security",
     "jsdom": "^19.0.0",
     "skynet-gundb-adapter": "https://github.com/parajbs/gundb-adapter"
